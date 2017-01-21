@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title> Start</title>
+    
+    
+
+
+    
+<style>
+	
+  
+  
+
+body, h1, h2, h3, p {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  color: #fff;
+}
+
+body {
+  background-color:#000;
+}
+
+h1 {
+  position: relative;
+  margin-top: 10px;
+  font-size: 36px;
+  font-weight: normal;
+}
+
+h2 {
+  position: relative;
+  font-size: 22px;
+  font-weight: normal;
+  color: #cfcfcf;
+}
+
+#demoWrapper {
+  width: 600px;
+  height: 350px;
+  -webkit-font-smoothing: antialiased;
+  color: black;
+  margin:auto;
+}
+#bg {
+  position: absolute;
+  width: 800px;
+  height: 350px;
+}
+#content {
+  padding-left: 15px;
+  visibility: hidden;
+}
+#info {
+  margin-top: 20px;
+}
+#feature {
+  position: relative;
+  float: left;
+}
+#description {
+  position: relative;
+  float: left;
+  margin-left: 20px;
+  width: 290px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+#box2 {
+  background-color: #88ce02;
+  position: absolute;
+
+  left: 50%;
+  top: 100px;	
+
+  width: 100px;
+  height: 100px;
+
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+#button2 {
+  background-color: #88ce02;
+  position: absolute;
+
+  left: 50%;
+  top: 50%;	
+
+  width: 600px;
+  height: 50px;
+
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+#button3 {
+  background-color: #fff;
+  position: absolute;
+  color: black;
+  left: 45%;
+  top: 50%;	
+
+  width: 200px;
+  height: 50px;
+
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+ z-index: 2; 
+}
+
+#button4 {
+  background-image: url("corner2.png");
+  position: absolute;
+
+  left: 55%;
+  top: 50%;	
+
+  width: 20px;
+  height: 50px;
+
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+
+
+#nav {
+text-align:right;
+  margin:20px 10px;
+}
+#nav img {
+  text-align:center;
+  position: relative;
+  margin-right: 20px;
+ 
+}
+button {
+  padding: 10px;
+  margin-top: 10px;
+}
+
+button:nth-child(1){
+  margin-left:10px;
+}
+
+#slider{
+  width: 580px;
+  margin:10px auto;
+  
+}
+
+.ui-widget-content {
+  background-color:rgba(255, 255, 255, 0.2);
+}
+
+
+	</style>
+
+    
+    
+    
+  </head>
+
+  <body>
+
+ 
+  <div id="button3" onclick="javascript:mouseOverGrey();" onmouseover="javascript:mouseOverGrey2();" onmouseout="javascript:mouseOverGrey3();" >
+ <%= @severityVar %>
+ </div> 
+
+<div id="button2">
+</div>
+ <div id="button4">
+
+ </div> 
+
+
+
+
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenLite.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/plugins/CSSPlugin.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/easing/EasePack.min.js'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+        <script>
+		
+  
+  
+  
+  
+
+var head = $("h1"),
+      content = $("#content"),
+    subhead = $("h2"),
+    feature = $("#feature"),
+    description = $("#description"),
+    icons = $("#nav img");
+
+var $box2 = $('#box2');	
+var $miniBox2 = $('#miniBox2');
+var $miniCube1 = $('#miniCube1');
+var $miniCube2 = $('#miniCube2');
+var $miniCube3 = $('#miniCube3');
+var $miniCube4 = $('#miniCube4');
+var $miniCube5 = $('#miniCube5');
+var $miniCube6 = $('#miniCube6');
+var $miniCube7 = $('#miniCube7');
+var $miniCube8 = $('#miniCube8');
+var $miniCube9 = $('#miniCube9');
+var $miniCube10 = $('#miniCube10');
+var $miniCube11 = $('#miniCube11');
+var $miniCube12 = $('#miniCube12');
+var $button3 = $('#button3');
+var $button4 = $('#button4');
+var randX;
+TweenLite.set(content, {visibility:"visible"})
+var count2 = 2;
+//instantiate a TimelineLite   
+var speedVar = 2;
+var xShake1 = -50;
+var xShake2 = -50;
+
+var tl = new TimelineLite();
+var setTimeoutDelay = 2000;
+
+	 
+	 
+
+tl.pause();
+randX = Math.floor(Math.random() * (600 - (0)) + (0));
+
+//tl.from($miniCube2, 0.5, {left:randX, opacity:0});
+
+//TweenLite.to($box2, 2.0, {y:500, opacity:0, delay: 1});
+//tl.to($miniBox2, 1.0, {y:100, opacity:0, delay: 1});
+tl.to($button3, 2, {x:-120, opacity:0, delay: <%= severityVar %>})
+.to($button2, 5, {x:100, opacity:0}, 0)
+//.to($miniCube1, 2.5, {rotation:360, transformOrigin:"100px"})
+.to($button2, 3, {rotation:200, y:200, opacity:1, transformOrigin:"100px"})
+//add another tween immediately after
+//tl.from(subhead, 0.5, {left:-100, opacity:0});
+
+//use position parameter "+=0.5" to schedule next tween 0.5 seconds after previous tweens end
+//tl.from(feature, 0.5, {scale:.5, autoAlpha:0}, "+=0.5");
+//tl.to($miniBox2, 2.0, {y:100, opacity:0, delay: 1});
+//use position parameter "-=0.5" to schedule next tween 0.25 seconds before previous tweens end.
+//great for overlapping
+//tl.from(description, 0.5, {left:100, autoAlpha:0}, "-=0.25");
+
+//add a label 0.5 seconds later to mark the placement of the next tween
+//tl.add("stagger", "+=0.5")
+//to jump to this label use: tl.play("stagger");
+
+//stagger the animation of all icons with 0.1s between each tween's start time
+//this tween is added
+//tl.staggerFrom(icons, 0.2, {scale:0, autoAlpha:0}, 0.1, "stagger");
+
+/* --- Control playback methods --- */
+//window.alert("timerStarted5s");
+//setTimeout(function() { restartTL(); }, 5000);
+
+/*
+$("#play").click(function() {
+        tl.play();
+});
+        
+$("#pause").click(function() {
+        tl.pause();
+});
+        
+$("#reverse").click(function() {
+        tl.reverse();
+});
+        
+$("#resume").click(function() {
+        tl.resume();    
+});
+
+$("#stagger").click(function() {
+        tl.play("stagger"); 
+});
+        
+$("#restart").click(function() {
+        tl.restart();
+});
+*/
+//when the timeline updates, call the updateSlider function
+tl.eventCallback("onUpdate", updateSlider);
+    
+$("#slider").slider({
+  range: false,
+  min: 0,
+  max: 100,
+  step:.1,
+  slide: function ( event, ui ) {
+    tl.pause();
+    //adjust the timeline's progress() based on slider value
+    tl.progress( ui.value/100 );
+    }
+}); 
+        
+
+
+tl.progress(1)
+
+
+
+function updateSlider() {
+  $("#slider").slider("value", tl.progress() *100);
+}  
+function mouseOver2() {
+	
+	if (count2 < 3) {
+	
+	TweenLite.to($box2, speedVar, {y:505, x: xShake1});
+	
+	setTimeout(mouseOver3, setTimeoutDelay);
+	}
+}
+
+
+function mouseOver3() {
+	if (count2 < 3) {
+	
+	TweenLite.to($box2, speedVar, {y:500, x: xShake2});
+	setTimeout(mouseOver2, setTimeoutDelay);
+	}
+}
+
+function killOnClick() { 
+
+document.getElementById('box2').style.opacity = 0;
+document.getElementById('box2').style.left = 0;
+document.getElementById('box2').style.top = 0;
+window.alert("test");
+
+}
+
+function opacityOnClick() {
+	
+	
+	document.getElementById('box2').style.opacity = 1;
+	
+	
+	
+}
+
+function mouseOverGrey() {
+	
+	tl.pause();
+	//TweenLite.to($miniCube1, 2.5, {rotation:360, transformOrigin:"100px", delay:1});
+	//TweenLite.to($miniCube2, 4, {rotation:200, y:200, transformOrigin:"100px", delay:1});
+   // TweenLite.to($miniCube3, 4, {rotation:200, y:-200, transformOrigin:"100px", delay:1});
+	//TweenLite.from($miniCube3, 4, {rotation:200, y:-200, transformOrigin:"100px", delay:6});
+}
+
+function mouseOverGrey2() {
+	tl.play();
+	
+	
+	
+}
+
+function mouseOverGrey3() {
+	tl.pause();
+	tl.reverse();
+	
+	
+	
+}
+
+function mouseOver4() {
+	
+	speedVar = 0.15;
+	setTimeoutDelay = 100;
+	xShake1 = -47;
+	xShake2 = -53;
+	//TweenLite.to($box2, 2, {y:1000});
+	//count2 = 4;
+}
+
+function mouseOut4() {
+  speedVar = 2.5;
+  xShake1 = -50;
+  xShake2 = -50;
+  setTimeoutDelay = 2000;
+  
+}
+		
+		</script>
+
+    
+    
+    
+  </body>
+
+
+
+<div class="form-group">
+<label> Stuff: </label>
+<textarea class="form-control" rows="5" id="stuff"></textarea>
+<%= @testVar %>
+<%= @testString %>
+<%= @severityVar %>
+</div>
+<!-- <div id="button2" onmouseover="javascript:mouseOverGrey2();"  >
+hello
+</div> -->
+ 
+<div class="alert alert-success fade in">
+</div>
+ <!--<div id="button3" onclick="javascript:mouseOverGrey();" onmouseover="javascript:mouseOverGrey2();" onmouseout="javascript:mouseOverGrey3();" >
+
+ </div>
+-->
+<%= @severityVar %>
+
+888
+
+</html>  

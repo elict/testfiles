@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Disability Tools</h1>
+
+<table>
+  <thead>
+    <tr>
+      
+      <th>Name</th>
+      
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @disability_tools.each do |disability_tool| %>
+      <tr>
+        
+        
+        <td><%= link_to (disability_tool.firstname) + " " + (disability_tool.lastname), generation_path(disability_tool) %></td>
+       
+        <td><%= link_to 'Show', disability_tool %></td>
+        <td><%= link_to 'Edit', edit_disability_tool_path(disability_tool) %></td>
+        <td><%= link_to 'Destroy', disability_tool, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Disability Tool', new_disability_tool_path %>

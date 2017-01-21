@@ -1,0 +1,42 @@
+<%= form_for(disability_tool) do |f| %>
+  <% if disability_tool.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(disability_tool.errors.count, "error") %> prohibited this disability_tool from being saved:</h2>
+
+      <ul>
+      <% disability_tool.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :notes %>
+    <%= f.text_area :notes, cols: "30", rows: "10" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :condition %>
+    <%= f.text_field :condition %>
+  </div>
+
+  <div class="field">
+    <%= f.label :severity %>
+    <%= f.number_field :severity %>
+  </div>
+
+  <div class="field">
+    <%= f.label :firstname %>
+    <%= f.text_field :firstname %>
+  </div>
+
+  <div class="field">
+    <%= f.label :lastname %>
+    <%= f.text_field :lastname %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

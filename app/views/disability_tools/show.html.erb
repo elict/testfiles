@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @disability_tool.notes %>
+</p>
+
+<p>
+  <strong>Condition:</strong>
+  <%= @disability_tool.condition %>
+</p>
+
+<p>
+  <strong>Severity:</strong>
+  <%= @disability_tool.severity %>
+</p>
+
+<p>
+  <strong>Firstname:</strong>
+  <%= @disability_tool.firstname %>
+</p>
+
+<p>
+  <strong>Lastname:</strong>
+  <%= @disability_tool.lastname %>
+</p>
+
+<%= link_to 'Edit', edit_disability_tool_path(@disability_tool) %> |
+<%= link_to 'Back', disability_tools_path %>

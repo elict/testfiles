@@ -1,0 +1,2 @@
+class DisabilityTool < ApplicationRecord
+end

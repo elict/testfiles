@@ -1,0 +1,29 @@
+<%= form_for(gamble, :url => gambling_send_path)  do |f| %>
+  <% if gamble.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(gamble.errors.count, "error") %> prohibited this gamble from being saved:</h2>
+
+      <ul>
+      <% gamble.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label 'bet' %>
+    <%= f.number_field :bet %>
+  </div>
+
+
+
+
+
+  <div class="actions">
+    
+    <%= f.submit %>
+    <%= :amount %>
+    <%= :bet %>
+  </div>
+<% end %>

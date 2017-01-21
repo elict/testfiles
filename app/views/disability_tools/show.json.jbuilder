@@ -1,0 +1,1 @@
+json.partial! "disability_tools/disability_tool", disability_tool: @disability_tool
